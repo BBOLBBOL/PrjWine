@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Cart">  
+
+
+  <select id="CartList"
+      resultType="com.green.user.cart.vo.CartVo">
+      SELECT C.C_IDX,
+             W.W_NAME ,
+             S.S_NAME,
+             C.C_COUNT,
+             WL.W_PRICE,
+             C.C_COUNT * WL.W_PRICE AS C_ALLPRICE
+        FROM CART C, WINE W, WINELIST WL, STORE S, TUSER U
+        WHERE S.S_NO = 1 AND W.W_NO = 1
+   </select>
+<!-- <insert id="CartList">
+
+		INSERT INTO TUSER (
+		U_NO,
+		U_ID,
+		U_PW,
+		U_NAME,
+		U_BIRTH,
+		U_SI,
+		U_GU,
+		U_PHONE
+		) VALUES (
+		( SELECT NVL(MAX(U_NO),0)+1 FROM TUSER),
+		#{ u_id },
+		#{ u_pw },
+		#{ u_name },
+		#{ u_birth },
+		#{ u_si },
+		#{ u_gu },
+		#{ u_phone }
+		)
+
+	</insert> -->
+<!--
+   <delete id="UserDelete">
+   
+      DELETE  FROM   TUSER
+        WHERE  USERID = #{ userid }  
+           
+   </delete>
+ -->
+ 
+</mapper>
+
+
+
+
+
+   

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Store">
+	
+	<!-- 영태 -->
+	<select id="SearchList" resultType="com.green.store.vo.RegVo">
+   		<![CDATA[
+  			SELECT CONCAT( W_KIND, W_LOCATION, W_NAME, W_VINTAGE ) AS DATA
+  			FROM WINE
+ 		 	WHERE CONCAT( W_KIND, W_LOCATION, W_NAME, W_VINTAGE ) LIKE '%' || #{data} || '%';
+  		]]>
+	</select>
+	<!-- 영태 -->
+	<insert id="InsertSearch">
+		INSERT INTO WINELIST ( S_NO, W_NO, W_AMOUNT, W_PRICE)
+		VALUES ( #{s_no}, #{w_no}, #{w_amount}, #{w_price})
+	</insert>
+	
+	 <select id="Storelogin"
+      resultType="com.green.store.vo.StoreVo">
+		SELECT *
+		 FROM  STORE
+		WHERE S_ID = #{ s_id }
+		 AND  S_PW = #{ s_pw }
+   </select>
+	<!-- 병규 -->
+	<insert id="StoreInsert">
+
+		INSERT INTO STORE (
+			S_NO,
+			S_ID,
+			S_PW,
+			S_NAME,
+			S_SN,
+			S_SI,
+			S_GU,
+			S_PHONE,
+			S_CONT
+		) VALUES (
+		( SELECT NVL(MAX(S_NO),0)+1 FROM STORE),
+		#{ s_id },
+		#{ s_pw },
+		#{ s_name },
+		#{ s_sn },
+		#{ s_si },
+		#{ s_gu },
+		#{ s_phone },
+		#{ s_cont }
+		)
+	</insert>
+	<!-- 임규 -->
+	<select id="WineList" resultType="com.green.store.vo.HavingWineVo">
+   
+      SELECT W.W_NAME,
+       W.W_LOCATION,
+       W.W_KIND,
+       W.W_VINTAGE,
+       WL.W_AMOUNT,
+       WL.W_PRICE,
+       S.S_NAME,
+       WL.WL_IDX,
+       S.S_NO,
+       W.W_NO
+      FROM WINELIST WL
+       INNER JOIN WINE W ON WL.W_NO = W.W_NO
+       INNER JOIN STORE S ON S.S_NO = WL.S_NO
+       WHERE S.S_NO = #{s_no}
+   
+   </select> 
+   <!-- 임규 -->
+   <update id="UpdateWineList">
+   UPDATE WINELIST
+   SET    W_AMOUNT  =  #{w_amount},
+          W_PRICE   =  #{w_price}
+   WHERE  S_NO      =  #{s_no} AND WL_IDX  =  #{wl_idx}
+   </update>
+</mapper>
+
+
+
+
+
+   
