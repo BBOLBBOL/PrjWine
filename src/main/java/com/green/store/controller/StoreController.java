@@ -44,8 +44,8 @@ public class StoreController {
 	}
 	
 	//매장 정보 수정 페이지 이동
-	@RequestMapping("/StoreCheckUpdate")
-	public String storecheckupdate() {
+	@RequestMapping("/StoreUpdateForm")
+	public String storeupdateform() {
 		return "/store/storeupdateform";
 	}
 }

@@ -25,5 +25,8 @@ public interface StoreService {
 
 	// (임규)
 	void updateWineList(HavingWineVo havingVo);
+	
+	// (병규)
+	
 
 }

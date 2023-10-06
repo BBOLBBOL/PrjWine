@@ -70,14 +70,13 @@ textarea {
 						class="redFont">(*필수입력)</span> 회원기본정보</td>
 				</tr>
 				<tr>
-					<td><span class="redFont">*</span>아이디:</td>
-					<td><input type="text" name="s_id" style="width: 200px">
-						<input type="button" value="아이디 검사"></td>
+					<td>
+					<span class="redFont">*</span>아이디:</td>
+					<td><input type="text" readonly="readonly" name="s_id" style="width: 200px"></td>
 				</tr>
 				<tr>
 					<td><span class="redFont">*</span>비밀번호:</td>
-					<td><input type="password" name="s_pw" style="width: 200px">
-					</td>
+					<td><input type="password" readonly="readonly" name="s_pw" style="width: 200px"></td>
 				</tr>
 				<tr>
 					<td><span class="redFont">*</span>매장이름:</td>

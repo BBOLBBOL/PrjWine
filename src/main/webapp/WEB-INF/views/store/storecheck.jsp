@@ -46,7 +46,7 @@ textarea{
 
 <h2 class="logintitle">매장 정보확인</h2>
 <div class="container">
- <form action="/UserJoin" method="POST">
+ <form action="/StoreJoin" method="POST">
  	<br><br>
 	<p><b>매장 아이디:</b></p> 
 	<p><b>매장 이름:</b></p>
@@ -57,7 +57,7 @@ textarea{
 	<p><b>매장 사진:</b></p>
 	<div style="text-align: center;">
 	<input type="button" value="메인화면가기" onclick="location.href='/'" style="margin: auto">
-	<input type="button" value="수정하러가기" onclick="location.href='/StoreCheckUpdate'" style="margin: auto">
+	<input type="button" value="수정하러가기" onclick="location.href='/StoreUpdateForm'" style="margin: auto">
 	</div>
 </div>
 

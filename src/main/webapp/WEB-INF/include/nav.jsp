@@ -42,7 +42,10 @@
      <li class="nav-item">
        <img src="/img/logon.png" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
           <ul class="dropdown-menu">
-             <li><a class="dropdown-item" href="/StoreCheck"><b>매장정보</b></a></li>
+             <li>
+             <a class="dropdown-item" href="/StoreCheck"><b>매장정보</b></a>
+             </li>
+             
             <li><a class="dropdown-item" href="/StoreWineRegisterForm"><b>매장와인 등록</b></a></li>
             <li><a class="dropdown-item" href="/StoreWineManage"><b>보유와인 확인/수정</b></a></li>
             <li><a class="dropdown-item" href="/Store/SalesHistory"><b>판매기록</b></a></li>
