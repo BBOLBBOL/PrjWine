@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Wine">
+	
+
+<select id="GetWineInfo" resultType="com.green.store.vo.WineVo">
+
+SELECT W_NO,
+       W_NAME,
+       W_KIND,
+       W_LOCATION,
+       W_VINTAGE,
+       W_AVG,
+       W_REVIEWS,
+       W_IMAGE,
+       W_WINEERY
+       FROM WINE
+       WHERE W_NO = #{w_no}
+
+</select>
+
+<select id="GetStoreList" resultType="com.green.store.vo.HavingWineVo">
+
+SELECT S.S_NAME, WL.W_PRICE
+FROM STORE S
+INNER JOIN WINELIST WL ON S.S_NO = WL.S_NO
+WHERE WL.W_NO  =  #{w_no}
+
+
+
+</select>
+
+
+</mapper>
+
+
+
+
+
+   
