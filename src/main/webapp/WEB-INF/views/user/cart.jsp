@@ -57,8 +57,8 @@
 <h1 style="text-align: center; margin-top: 60px; margin-bottom: 120px;">장바구니</h1>
    <main>
       
-   <form action="/UserPayment?u_no=${u_no }" method="POST" id="formPayment">
-   <input type="hidden" name="cartids" value="" />
+   <form action="/UserPayment?u_no=${u_no}" method="POST" id="formPayment">
+   <input type="hidden" name="cartids" value="${cartids}" />
    <!-- 게시물 목록 -->
    <table id="table">
    

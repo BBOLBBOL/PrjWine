@@ -2,7 +2,7 @@
 
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
   
- 
+  
 <!-- 위 nav (비로그인)-->
 <c:choose> 
   <c:when test="${ loginVo eq null and sloginVo eq null }">

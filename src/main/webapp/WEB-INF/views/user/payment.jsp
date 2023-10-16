@@ -81,11 +81,11 @@
 <script>
 
 var IMP  =  window.IMP;
-IMP.init("imp64553480")
+IMP.init("imp37666357")
 
-var storeName  = '테스트입니다';
-var wineName  =  '테스트';
-var allPrice  =  1000
+var storeName  = `${s_name}`;
+var wineName  =  `${w_name}`;
+var allPrice  =  `${c_allprice}`;
     allPrice  =  parseInt(allPrice);
 
 var buyerName =  $("#u_name").val();
@@ -93,15 +93,15 @@ var buyerAddress  =  $("#u_address").val();
 
 $('#money-btn').click(function() {
 	IMP.request_pay({
-		pg: 'html5_inicis.INIBillTst',
+		pg: 'kakaopay',
 		pay_method: 'card',
 		merchant_uid: 'merchant_' + new Date().getTime(),
 
-		name: '예약 지점명 : ' + storeName + '점',
-		amount: 130,
+		name: '지점명 : ' + storeName + '점',
+		amount: `${c_allprice}`,
 		buyer_email: "",  /*필수 항목이라 "" 로 남겨둠*/
 		buyer_name: buyerName,
-		customer_uid : 'store-fd4992b6-fce9-4f0e-bc65-7372b0736b89'
+		customer_uid : 'store-a2524cc9-b0ee-4153-9b4e-659a6ec9109b'
 	}, function(rsp) {
 		console.log(rsp);
 		
@@ -114,7 +114,7 @@ $('#money-btn').click(function() {
 				type: "GET",
 				url: '/WinePay',
 				data: {
-					amount: allPrice,
+					amount: `${c_allprice}`,
 					imp_uid: rsp.imp_uid,
 					merchant_uid: rsp.merchant_uid
 				}

@@ -34,15 +34,17 @@ AND    C_IDX =  #{c_idx}
 <select id="SelectList" resultType="com.green.user.cart.vo.CartVo">
 SELECT C.C_IDX,
        W.W_NAME,
+       W.W_NO,
        S.S_NAME,
+       S.S_NO,
        C.C_COUNT,
        WL.W_PRICE,
        U.U_NO,
        C.C_COUNT * WL.W_PRICE AS C_ALLPRICE
   FROM CART C
+  LEFT JOIN STORE S ON C.S_NO = S.S_NO
   LEFT JOIN WINE W ON C.W_NO = W.W_NO
   LEFT JOIN WINELIST WL ON C.W_NO = WL.W_NO
-  LEFT JOIN STORE S ON C.S_NO = S.S_NO
   LEFT JOIN TUSER U ON C.U_NO = U.U_NO
   WHERE U.U_NO = #{u_no}
   <foreach collection="list" item="digit" open=" AND C.C_IDX IN (" separator="," close=")">

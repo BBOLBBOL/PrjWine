@@ -134,7 +134,6 @@ public class UserController {
 		mv.addObject("userList", userList);
 		return mv;
 		}
-
 	
 	@RequestMapping("/UserPwUpdate")
 	public ModelAndView userPwUpdate(UserVo vo) {
