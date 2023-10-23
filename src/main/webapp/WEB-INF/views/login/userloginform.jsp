@@ -13,17 +13,14 @@
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
 
-* {
-  margin: 0;
-  padding: 0;
-}
 
-body {
+.login-store {
   font-family: 'Noto Sans KR', sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+   margin-top: -230px; /* 50px 위로 이동 */
 }
 
 .login-form h1 {
@@ -95,7 +92,7 @@ body {
 .btn-area button {
   width: 100%;
   height: 50px;
-  margin: 0px 10px;
+  margin: 0px 0px;
   color: #fff;
   background: #166caa;
   border: none;
@@ -119,9 +116,21 @@ body {
 </head>
 <body>
 <%@include file="/WEB-INF/include/nav.jsp"%>
-<div>
+<div class="breadcrumb-section breadcrumb-bg">
+         <div class="col-lg-8 offset-lg-2 text-center">
+            <div class="breadcrumb-text">
+               <br>
+               <h1>고객 로그인</h1>
+               <br>
+               <p>User Login</p>
+            </div>
+         </div>
+      </div>
+<br>
+<br>
+
+<div class="login-store">
 <section class="login-form">
-<h1>고객 로그인</h1>
   <form action="/UserLogin" method="POST" >
    <div class="int-area">
             <input type="text" name="u_id" placeholder="Input your ID" autocomplete="off">
