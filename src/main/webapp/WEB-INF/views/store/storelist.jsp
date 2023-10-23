@@ -125,7 +125,7 @@
 			<div class="card" style="width: 18rem;">
 				<div class="card-body">
 					<div style="max-width: 300px; max-height: 300px; margin: 0 auto;">
-						<img src="/pageimg/${store.s_simgname}" alt="매장사진"
+						<img src="/imgpage/${store.s_simgname}" alt="매장사진"
 							style="max-width: 100%; height: 100%; object-fit: contain;" />
 					</div>
 					<h5 class="card-title"><i class="fas fa-briefcase">&nbsp;${store.s_name}</i></h5>

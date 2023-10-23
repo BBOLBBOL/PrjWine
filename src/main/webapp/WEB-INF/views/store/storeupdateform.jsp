@@ -29,53 +29,51 @@
 	<link rel="stylesheet" href="assets/css/responsive.css">
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     <style>
-        .container {
-            margin: 20px auto;
-        }
-        .storetitle {
-            text-align: center;
-            margin-top: 40px;
-        }
-        .form-label {
-            font-weight: bold;
-        }
-        .form-text {
-            font-weight: normal;
-        }
-        .mb-3 {
-            margin-bottom: 15px;
-        }
-        .btn-group {
-            text-align: center;
-        }
-        .btn-group button {
-            margin: 10px;
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-        }
-         .btn1 {
-    font-family: 'Poppins', sans-serif;
-    display: inline-block;
-    background-color: #F28123;
-    color: #fff;
-    padding: 13px 25px;
-    border-radius: 50px;
-    transition: 0.3s;
-    box-sizing: border-box;
-    border: none; /* 경계선 없음 */
-    cursor: pointer; /* 포인터 커서로 변경 */
-    font-weight: 700;
-    font-size: 15px;
-    border: none;
+.logintitle {
+    text-align: center;
+    margin-top: 40px;
 }
-
-/* 호버(마우스 오버) 시의 버튼 스타일 */
-.btn1:hover {
-    background-color: #000; 
-    color: #F28123;!important;
-} 
+.container1 {
+    margin: 0 auto;
+    max-width: 50%;
+    padding-top: 80px;
+}
+table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: .25rem;
+}
+tr>td:nth-child(1) {
+    text-align: center;
+    padding-right: 10px;
+    width: 30%;
+    font-weight: bold;
+}
+tr>td:nth-child(2) {
+    text-align: left;
+    padding-right: 10px;
+    width: 30%;
+    font-weight: bold;
+}
+tr,td {
+    border-bottom: solid thin #e6e6e6;
+    padding-bottom: 0.5em;
+    padding-top: 0.5em;
+    background-color: #D0E3F7;
+}
+.redFont {
+    color: red;
+    font-size: 12px;
+    font-style: italic;
+}
+textarea {
+    resize: none;
+    width: 100%;
+    height: 100%;
+}
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
@@ -118,50 +116,65 @@
    </div>
    <br>
    <br>
-    <div class="container">
+   <div class="container1">
         <form action="StoreCheckUpdate?s_no=${s_no }" method="POST" enctype="multipart/form-data">
-            <c:forEach var="check" items="${storeCheck }">
-                <div class="mb-3">
-                    <label for="storeId" class="form-label">매장 아이디:</label>
-                    <span id="storeId" class="form-text">${check.s_id }</span>
-                </div>
-                <div class="mb-3">
-                    <label for="storeName" class="form-label">매장 이름:</label>
-                    <input type="text" name="s_name" value="${check.s_name }">
-                </div>
-                <div class="mb-3">
-                    <label for="storeName" class="form-label">사업자 번호:</label>
-                    <span id="s_sn" class="form-text">${check.s_sn }</span>
-                </div>
-                <div>
-                    <input type="text" id="s_postcode" name="s_postcode" value="${check.s_postcode}">
-                    <input type="button" onclick="s_execDaumPostcode()" value="우편번호 찾기"><br> 
-                    <input type="text" id="s_address" name="s_address" value="${check.s_address }"><br>
-                    <input type="text" id="s_detailAddress" name="s_detailAddress" value="${check.s_detailAddress }">
-                    <input type="text" id="s_extraAddress" name="s_extraAddress" value="${check.s_extraAddress }">
-                </div>
-                <div class="mb-3">
-                    <label for="storePhone" class="form-label">매장 연락처:</label>
-                    <input type="text" name="s_phone" value="${check.s_phone }">
-                </div>
-                <div class="mb-3">
-                    <label for="storeCont" class="form-label">매장 소개:</label>
-                    <textarea name="s_cont">${check.s_cont }</textarea>
-                </div>
-                <div class="mb-3">
-                    <label for="storeIMG" class="form-label">현재 매장사진:</label>
-                   <img src="/pageimg/${check.s_simgname}" alt="매장사진" style="max-width: 300px;" />
-                   </div>
-                   <div>
-					<label for="storeIMG" class="form-label">변경할 매장사진:</label>
-                  <img id="preview" style="max-width: 300px;">
-                  <br>
-                  <input type="file" accept="image/*" onchange="readURL(this)" name="upfile" class="upfile" />
-                </div>
-        
-                
-            </c:forEach>
-            <div class="text-center">
+			<table>
+				<colgroup>
+					<col width="25%">
+					<col width="*">
+				</colgroup>
+				<c:forEach var="check" items="${storeCheck }">
+					<tr>
+						<td class="form-label">매장 아이디:</td>
+						<td class="form-text">${check.s_id}</td>
+					</tr>
+					<tr>
+						<td class="form-label">매장 이름:</td>
+						<td class="form-text"><input type="text" name="s_name"
+							value="${check.s_name}"></td>
+					</tr>
+					<tr>
+						<td class="form-label">사업자 번호:</td>
+						<td class="form-text">${check.s_sn}</td>
+					</tr>
+					<tr>
+						<td class="form-label">매장 주소:</td>
+						<td class="form-text"><input type="text" id="s_postcode"
+							name="s_postcode" value="${check.s_postcode}"> <input
+							type="button" onclick="s_execDaumPostcode()" value="우편번호 찾기">
+							<br> <input type="text" id="s_address" name="s_address"
+							value="${check.s_address}"> <br> <input type="text"
+							id="s_detailAddress" name="s_detailAddress"
+							value="${check.s_detailAddress}"> <input type="text"
+							id="s_extraAddress" name="s_extraAddress"
+							value="${check.s_extraAddress}"></td>
+					</tr>
+					<tr>
+						<td class="form-label">매장 연락처:</td>
+						<td class="form-text"><input type="text" name="s_phone"
+							value="${check.s_phone}"></td>
+					</tr>
+					<tr>
+						<td class="form-label">매장 소개:</td>
+						<td class="form-text"><textarea name="s_cont">${check.s_cont}</textarea>
+						</td>
+					</tr>
+					<tr>
+						<td class="form-label">현재 매장사진:</td>
+						<td><img src="/imgpage/${check.s_simgname}" alt="매장사진"
+							style="max-width: 300px;" /></td>
+					</tr>
+					<tr>
+						<td class="form-label">변경할 매장사진:</td>
+						<td><img id="preview" style="max-width: 300px;"> <br>
+							<input type="file" accept="image/*" onchange="readURL(this)"
+							name="upfile" class="upfile" /></td>
+					</tr>
+
+
+				</c:forEach>
+			</table>
+			<div class="text-center">
                 <div class="btn-group">
                     <a type="button" class="btn1" onclick="location.href='/';">메인 화면</a>
                     <input type="submit" value="수정하기" id="edit-btn">
@@ -241,12 +254,4 @@ function s_execDaumPostcode() {
 </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
 

@@ -205,7 +205,7 @@ document.addEventListener("DOMContentLoaded", function () {
            <a href="TastingRequestList?s_no=${sloginVo.s_no }&t_idx=${tast.t_idx}" class="btn btn-primary">신청자 목록 </a>
            <form action="/TastingListDelete?t_idx=${tast.t_idx}" method="POST">
               <button type="submit" class="btn btn-primary" id="delete-confirm">삭제</button>
-              <button type="button" class="btn btn-primary" onclick="goBack()">뒤로가기</button>
+              <button type="button" class="btn btn-primary" onclick="history.back()">뒤로가기</button>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 var deleteButton = document.getElementById("delete-confirm");

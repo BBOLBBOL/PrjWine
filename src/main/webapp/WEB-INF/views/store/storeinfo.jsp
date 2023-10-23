@@ -166,7 +166,7 @@ body {
 
    <c:forEach var="info" items="${storeInfo}">
       <div class="store-container">
-         <img class="store-image" src="/pageimg/${info.s_simgname}" alt="매장사진" />
+         <img class="store-image" src="/imgpage/${info.s_simgname}" alt="매장사진" />
 
          <div class="wine-details">
             <div class="store-name">${info.s_name }</div>
