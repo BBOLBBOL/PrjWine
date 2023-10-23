@@ -57,7 +57,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </head>
 <body>
-<%@include file="/WEB-INF/include/nav.jsp"%>
+<%@include file="/WEB-INF/include/nav.jsp"%>          
 <div class="breadcrumb-section breadcrumb-bg">
          <div class="col-lg-8 offset-lg-2 text-center">
             <div class="breadcrumb-text">
@@ -70,6 +70,7 @@
       </div>
 <br>
 <br>
+
 <div class="container">
    
    <table class="table table-striped table-hover table-dark">

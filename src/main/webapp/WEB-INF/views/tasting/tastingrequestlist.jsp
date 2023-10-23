@@ -19,7 +19,7 @@
 
 /* 테이블 헤더 스타일 */
 #table th {
-   background-color: #f2f2f2; /* 헤더 배경색 */
+   background-color: #800021 !important;
    border: 1px solid #dddddd; /* 테두리 선 스타일 */
    padding: 10px; /* 셀 안 여백 */
    text-align: center; /* 가운데 정렬 */
@@ -32,15 +32,12 @@
    padding: 10px; /* 셀 안 여백 */
    text-align: center; /* 가운데 정렬 */
 }
-
 </style>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </head>
 <body>
 <%@include file="/WEB-INF/include/nav.jsp"%>
 	  <div class="breadcrumb-section breadcrumb-bg">
-      <div class="container">
-         <div class="row">
             <div class="col-lg-8 offset-lg-2 text-center">
                <div class="breadcrumb-text">
                <br>
@@ -49,14 +46,12 @@
                   <p>Store Information</p>
                </div>
             </div>
-         </div>
-      </div>
    </div>
    <br>
    <br>
   
    <main>
-   <table id="table">
+   <table id="table" class="table table-striped table-hover table-dark">
       <div class="container">
                <tr>
                   <th>고객 이름</th>
