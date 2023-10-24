@@ -78,12 +78,10 @@
     }
     
 .back-home-button {
-    text-align: center; /* 가로 중앙 정렬 */
-    display: flex;
-    justify-content: center; /* 가로 중앙 정렬 */
-    align-items: center; /* 수직 중앙 정렬 */
-    height: 100vh; /* 수직 중앙 정렬에 필요한 높이 설정 (옵션) */
-    margin-top: -440px;
+ 	text-align: center; /* 가로 중앙 정렬 */
+	display: flex;
+	justify-content: center; /* 가로 중앙 정렬 */
+	margin-top: 20px; 
 }	
 
 .card-info {
@@ -149,6 +147,10 @@ th {
             </c:if>
 
         </table>
+                <!-- 매장 홈으로 버튼 -->
+        <div class="back-home-button text-center">
+        <a href="/" class="btn btn-secondary">홈버튼</a>
+        </div>
             <div class="pagination">
 
     <c:if test="${pds.startPage != 1 }">
@@ -170,10 +172,7 @@ th {
  </div>
         
 
-        <!-- 매장 홈으로 버튼 -->
-        <div class="back-home-button text-center">
-        <a href="/" class="btn btn-secondary">홈버튼</a>
-        </div>
+
  
     </main>
     <script>

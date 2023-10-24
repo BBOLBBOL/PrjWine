@@ -41,12 +41,10 @@
       } 
       
       .back-home-button {
-    text-align: center; /* 가로 중앙 정렬 */
-    display: flex;
-    justify-content: center; /* 가로 중앙 정렬 */
-    align-items: center; /* 수직 중앙 정렬 */
-    height: 100vh; /* 수직 중앙 정렬에 필요한 높이 설정 (옵션) */
-    margin-top: -440px;
+	text-align: center; /* 가로 중앙 정렬 */
+	display: flex;
+	justify-content: center; /* 가로 중앙 정렬 */
+	margin-top: 20px; 
 }	
 
 .card-info {
@@ -100,7 +98,9 @@ th {
 	</tr>
 	</c:forEach>
 	</table>
-	
+	  <div class="back-home-button text-center">
+	 <a type="button" class="btn btn-danger" onclick="deleteValue();">삭제</a>
+	 </div>
 	<div class="pagination">
 
     <c:if test="${pds.startPage != 1 }">
@@ -120,9 +120,7 @@ th {
    <a href="/AdminBoardList?nowPage=${pds.endPage+1 }&cenPerPage${pds.cntPerPage}">&gt;</a>
  </c:if>
 </div>
-  <div class="back-home-button text-center">
-	 <a type="button" class="btn btn-danger" onclick="deleteValue();">삭제</a>
-	 </div>
+
 <script>
 //전체 체크    
 var chkObj  =  document.getElementsByName("rowCheck");
