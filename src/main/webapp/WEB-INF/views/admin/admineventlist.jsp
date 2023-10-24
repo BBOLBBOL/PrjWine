@@ -69,19 +69,15 @@
         border-radius: 5px;
     }
     
-    .back-home-button {
+.back-home-button {
     text-align: center; /* 가로 중앙 정렬 */
     display: flex;
     justify-content: center; /* 가로 중앙 정렬 */
     align-items: center; /* 수직 중앙 정렬 */
     height: 100vh; /* 수직 중앙 정렬에 필요한 높이 설정 (옵션) */
+    margin-top: -440px;
 }	
     
-    .back-home-button {
-        text-align: center;
-        margin-top: -400px;
-    }
-      
 
 </style>
 </head>
@@ -110,7 +106,7 @@
 	<tr class="first-row">
 	    <th><input type="checkbox" id="allCheck"></th>
 		<th>이벤트제목</th>
-		<th>주최매장</th>
+		<th>매장번호</th>
 		<th>미리보기사진</th>
 		<th>메인사진</th>
 		<th>이벤트시작날짜</th>
@@ -156,7 +152,7 @@
 
 </div>
 <div class="back-home-button text-center">
-	 <a type="button" class="btn btn-primary" onclick="deleteValue();">삭제</a>
+	 <a type="button" class="btn btn-danger"" onclick="deleteValue();">삭제</a>
 	 </div>
 <script>
 //전체 체크    

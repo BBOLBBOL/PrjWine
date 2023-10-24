@@ -15,61 +15,125 @@
 	rel="stylesheet"
 	integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
 	crossorigin="anonymous">
+
+	<style>
+ .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 1px solid #ddd;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+
+        input[type="text"],
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+
+        #preview {
+            max-width: 300px;
+            display: block;
+            margin: 10px auto;
+        }
+
+        #btn1 {
+            display: block;
+            margin: 0 auto;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
+        
+         h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+    </style>
 <script
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
 	integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
 	crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
 <%@include file="/WEB-INF/include/nav.jsp"%>
-	  <div class="breadcrumb-section breadcrumb-bg">
-</div>
-		<!-- 게시물 목록 -->
-		<form action="/AdminWineInsert" method="POST" >
-		<div style="overflow-y: auto; max-height: 340px; max-width: 60%; margin: 0 auto; text-align: center;">
-			<table id="table">
-				<tr>
-					<th>Winery</th>
-					<th>Wine</th>
-					<th>Vintage</th>
-					<th>Average</th>
-					<th>Reviews</th>
-					<th>Location</th>
-					<th>Image</th>
-					<th>Kind</th>
-				</tr>
-						<tr>
-							<td><input type="text" name="w_wineery" autocomplete="off"></td>
-							<td><input type="text" name="w_name" autocomplete="off"></td>
-							<td><input type="text" name="w_vintage" autocomplete="off"></td>
-							<td><input type="text" name="w_avg" autocomplete="off"></td>
-							<td><input type="text" name="w_reviews" autocomplete="off"></td>
-							<td><input type="text" name="w_location" autocomplete="off"></td>
-							<td><input type="text" name="w_image" autocomplete="off">
-							    <img id="preview" style="max-width: 300px">
-							</td>
-							<td>					
-					  <select id="kind" name="w_kind">
-					  	<option value="kind">Kind</option>
-					  	<option value="PORT">PORT</option>
-					  	<option value="DESSERT">DESSERT</option>
-					  	<option value="RED">RED</option>
-					  	<option value="ROSE">ROSE</option>
-					  	<option value="WHITE">WHITE</option>
-					  	<option value="SPARKING">SPARKLING</option>
-					  </select>
-					</td>
-						</tr>
-			</table>
-			<div style="position: sticky; bottom: 0; background-color: white; padding: 10px; text-align: center;">
-				<button id="btn1" type="button" class="btn btn-primary" onclick="myconfirm();">등록</button>
-			</div>
-		</div>
-		</form>
-	</main>
+<div class="breadcrumb-section breadcrumb-bg">
+         <div class="col-lg-8 offset-lg-2 text-center">
+            <div class="breadcrumb-text">
+               <br>
+               <h1>고객 센터(매장)</h1>
+               <br>
+               <p>Customer Service</p>
+            </div>
+         </div>
+      </div>
+<br>
+<br>
+		 <div class="container">
+        <h2>와인 등록</h2>
+        <form action="/AdminWineInsert" method="POST">
+            <table>
+                <tr>
+                    <th>Winery</th>
+                    <th>Wine</th>
+                    <th>Vintage</th>
+                    <th>Average</th>
+                    <th>Reviews</th>
+                    <th>Location</th>
+                    <th>Image</th>
+                    <th>Kind</th>
+                </tr>
+                <tr>
+                    <td><input type="text" name="w_wineery" autocomplete="off"></td>
+                    <td><input type="text" name="w_name" autocomplete="off"></td>
+                    <td><input type="text" name="w_vintage" autocomplete="off"></td>
+                    <td><input type="text" name="w_avg" autocomplete="off"></td>
+                    <td><input type="text" name="w_reviews" autocomplete="off"></td>
+                    <td><input type="text" name="w_location" autocomplete="off"></td>
+                    <td>
+                        <input type="text" name="w_image" autocomplete="off">
+                    </td>
+                    <td>
+                        <select name="w_kind">
+                            <option value="kind">Kind</option>
+                            <option value="PORT">PORT</option>
+                            <option value="DESSERT">DESSERT</option>
+                            <option value="RED">RED</option>
+                            <option value="ROSE">ROSE</option>
+                            <option value="WHITE">WHITE</option>
+                            <option value="SPARKLING">SPARKLING</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <button id="btn1" type="submit" class="btn btn-primary" onclick="myconfirm();">등록</button>
+        </form>
+    </div>
+</body>
 <script>
 var wineery = document.querySelector('input[name="w_wineery"]').value;
-var wine = document.querySelector('input[name="w_wine"]').value;
+var wine = document.querySelector('input[name="w_name"]').value;
 var vintage = document.querySelector('input[name="w_vintage"]').value;
 var avg = document.querySelector('input[name="w_avg"]').value;
 var reviews = document.querySelector('input[name="w_reviews"]').value;
@@ -98,5 +162,4 @@ document.getElementById("kind").addEventListener("change", function () {
 
 
 </script>
-</body>
 </html>

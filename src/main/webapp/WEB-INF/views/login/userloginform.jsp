@@ -14,7 +14,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
 
 
-.login-store {
+.login-user {
   font-family: 'Noto Sans KR', sans-serif;
   display: flex;
   justify-content: center;
@@ -129,7 +129,7 @@
 <br>
 <br>
 
-<div class="login-store">
+<div class="login-user">
 <section class="login-form">
   <form action="/UserLogin" method="POST" >
    <div class="int-area">

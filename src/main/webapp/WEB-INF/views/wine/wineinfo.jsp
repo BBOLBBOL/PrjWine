@@ -24,16 +24,16 @@ body {
 }
 
 .wine-container1 {
-  display: flex;
-  flex-wrap: wrap;
-  width: 650px; /* 가로 너비를 650px로 설정 */
-  height: 1200px; /* 높이를 항상 1200px로 설정 */
-  margin: 40px auto;
-  padding: 40px;
-  background-color: #fff;
-  border-radius: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
+    display: flex;
+    flex-wrap: nowrap;
+    width: 1200px;
+    height: 500px;
+    margin: 40px auto;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+   }
 
 .wine-image {
 	max-width: 400px;
@@ -45,15 +45,16 @@ body {
 }
 
 .wine-details {
-	flex-basis: 50%; /* 오른쪽 위 */
-	padding: 20px;
+	flex-basis: 40%; /* 오른쪽 위 */
+	padding: 0px;
+	margin-bottom: 100px;
 }
 
 .wine-name {
 	font-size: 36px;
 	font-weight: bold;
-	margin-bottom: 20px;
-	margin-top: 50px;
+	margin-bottom: 50px;
+	margin-top: 30px;
 }
 
 .wine-amount {
@@ -72,11 +73,23 @@ body {
 	margin-bottom: 70px;
 }
 
-.store-link {
-	text-decoration: none;
-	color: #007bff;
-	font-weight: bold;
-	font-size: 18px;
+.store-list-item {
+    flex-basis: calc(33.33% - 20px); /* 아이템 3분할로 정렬, 간격 제거 */
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px; /* 리스트 아이템에 더 둥근 테두리 적용 */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+    margin-top: 20px;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.btn-primary {
+    margin-top: 10px; /* 장바구니 버튼과 다른 내용 간 간격 조정 */
 }
 </style>
 <script
@@ -116,20 +129,22 @@ body {
 			</div>
 	</c:forEach>
 
-	<c:forEach var="storeList" items="${storeList }">
 		<ul>
+			<c:forEach var="storeList" items="${storeList }" varStatus="loop">
+			<c:if test="${loop.index < 3 }">
 			<!-- forEach  -->
-			<li class="list-item"><a class="store-link"
+			<li class="store-list-item"><a class="store-link"
 				href="/StoreInfo?s_no=${storeList.s_no}">매장 이름 :
-					${storeList.s_name }</a> <span>가격 : ${storeList.w_price }</span>
+					${storeList.s_name }</a> <span>가격 : ${storeList.w_price }</span><br>
 			    <c:choose>
 					<c:when test="${not empty loginVo.u_no}">
-						<a href="/AddCartForm?u_no=${loginVo.u_no}&s_no=${storeList.s_no}&w_no=${storeList.w_no}&wl_idx=${storeList.wl_idx}" class="btn btn-primary">장바구니</a>
+						<a href="/AddCartForm?u_no=${loginVo.u_no}&s_no=${storeList.s_no}&w_no=${storeList.w_no}&wl_idx=${storeList.wl_idx}" class="btn btn-primary">장바구니</a><br>
 					</c:when>
 				</c:choose>
-		    </li>
-		</ul>
+		    		</li>
+				</c:if>
 	</c:forEach>
+		</ul>
 	</div>
 
 </body>

@@ -57,12 +57,6 @@
         border-radius: 5px;
         cursor: pointer;
     }
-
-    /* 매장 홈으로 버튼 스타일 */
-    .back-home-button {
-        text-align: center;
-        margin-top: -400px;
-    }
       .event-button {
         width: 70%; /* 중앙 70% 폭 설정 */
         margin: 0 auto; /* 가운데 정렬 */
@@ -96,8 +90,8 @@
     justify-content: center; /* 가로 중앙 정렬 */
     align-items: center; /* 수직 중앙 정렬 */
     height: 100vh; /* 수직 중앙 정렬에 필요한 높이 설정 (옵션) */
+    margin-top: -440px;
 }	
-
 </style>
 <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
@@ -174,7 +168,7 @@
 
         <!-- 매장 홈으로 버튼 -->
         <div class="back-home-button text-center">
-        <a href="/" class="btn btn-primary">홈버튼</a>
+        <a href="/" class="btn btn-secondary">홈버튼</a>
         </div>
  
     </main>

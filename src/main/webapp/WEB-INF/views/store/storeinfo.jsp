@@ -12,12 +12,92 @@
 	rel="stylesheet"
 	integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
 	crossorigin="anonymous">
+<style>
+ .store-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr; /* 그리드 행의 높이를 동일하게 설정 */
+    gap: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    max-width: 1000px; /* 가로 최대 너비 설정 (조절 가능) */
+    margin: auto;
+}
+
+.store-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.wine-details {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.store-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.store-cont {
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.store-address {
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.store-detailAddress {
+    margin-bottom: 10px;
+}
+
+.winelist-link {
+    margin-top: 10px;
+}
+
+#map {
+    width: 100%;
+    height: 300px; /* 지도의 높이 조절 (조절 가능) */
+}
+
+#board {
+    width: 100%;
+    height: 300px; /* 게시판의 높이 조절 (조절 가능) */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    text-align: center;
+    padding: 8px;
+    border: 1px solid #ddd;
+}
+
+.table-container {
+    position: sticky;
+    bottom: 0;
+    background-color: white;
+    padding: 10px;
+    text-align: center;
+}
+</style>
 <script
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
 	integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
 	crossorigin="anonymous"></script>
-<style>
-</style>
+
 </head>
 <body>
  <%@include file="/WEB-INF/include/nav.jsp"%>
@@ -50,8 +130,8 @@
             <div class="store-detailAddress">${info.s_detailAddress } <a class="winelist-link" href="/StoreWineManage?s_no=${info.s_no}"
             class="btn btn-primary">매장보유 와인</a></div>
          </div>
-          <div id="map" style="width: 50%; height: 350px; float: left;"></div>
-         <div id="board" style="width: 50%; height: 350px; float: right;">
+          <div id="map" ></div>
+         <div id="board" >
           <table id="table">
            <div class="container">
             <tr>

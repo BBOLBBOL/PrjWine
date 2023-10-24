@@ -10,6 +10,7 @@
 <link rel="icon" type="image/x-icon" href="/imgpage/favicon.ico">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <style>
   #table { 
          width: 70%; 
@@ -80,6 +81,15 @@ button[type="submit"] {
     cursor: pointer;
 }
       
+
+.back-home-button {
+    text-align: center; /* 가로 중앙 정렬 */
+    display: flex;
+    justify-content: center; /* 가로 중앙 정렬 */
+    align-items: center; /* 수직 중앙 정렬 */
+    height: 100vh; /* 수직 중앙 정렬에 필요한 높이 설정 (옵션) */
+    margin-top: -440px;
+}	
       
 </style>
 </head>
@@ -166,7 +176,9 @@ button[type="submit"] {
     <a href="/AdWineSearch?kindOption=${kindOption}&searchKeyword=${searchKeyword}&searchOption=${searchOption}&nowPage=${pds.endPage + 1}&cntPerPage=${pds.cntPerPage}">&gt;</a>
 </c:if>
 </div>
-   <a type="button" class="btn btn-primary" onclick="deleteValue();">삭제</a>
+<div class="back-home-button text-center">
+   <a type="button" class="btn btn-danger" onclick="deleteValue();">삭제</a>
+   </div>
 <script>
 //전체 체크    
 var chkObj  =  document.getElementsByName("rowCheck");

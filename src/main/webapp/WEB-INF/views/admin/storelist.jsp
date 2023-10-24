@@ -41,6 +41,17 @@
       .first-row td {
       background-color: #f2f2f2;
       }
+      
+      .back-home-button {
+    text-align: center; /* 가로 중앙 정렬 */
+    display: flex;
+    justify-content: center; /* 가로 중앙 정렬 */
+    align-items: center; /* 수직 중앙 정렬 */
+    height: 100vh; /* 수직 중앙 정렬에 필요한 높이 설정 (옵션) */
+    margin-top: -440px;
+}	
+      
+      
 </style>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
@@ -79,13 +90,13 @@
 	<c:forEach var="storeList" items="${storeList }">
 	<tr>
 	    <td><input type="checkbox" name="rowCheck" id="rowCheck" value="${storeList.s_no }"></td>
-		<td><a href="StoreInfo?s_no=${storeList.s_no }" >${storeList.s_no }</a></td>
-		<td><a href="StoreInfo?s_no=${storeList.s_no }" >${storeList.s_id}</a></td>
-		<td><a href="StoreInfo?s_no=${storeList.s_no }" >${storeList.s_name }</a></td>
-		<td><a href="StoreInfo?s_no=${storeList.s_no }" >${storeList.s_address } &nbsp; ${storeList.s_detailAddress }</a></td>
-		<td><a href="StoreInfo?s_no=${storeList.s_no }" >${storeList.s_sn }</a></td>
-		<td><a href="StoreInfo?s_no=${storeList.s_no }" >${storeList.s_phone }</a></td>
-		<td><a href="StoreInfo?s_no=${storeList.s_no }" >${storeList.s_cont }</a></td>
+		<td><a href="StoreInfo?s_no=${storeList.s_no }" class="nav-link" >${storeList.s_no }</a></td>
+		<td><a href="StoreInfo?s_no=${storeList.s_no }" class="nav-link">${storeList.s_id}</a></td>
+		<td><a href="StoreInfo?s_no=${storeList.s_no }" class="nav-link">${storeList.s_name }</a></td>
+		<td><a href="StoreInfo?s_no=${storeList.s_no }" class="nav-link">${storeList.s_address } &nbsp; ${storeList.s_detailAddress }</a></td>
+		<td><a href="StoreInfo?s_no=${storeList.s_no }" class="nav-link">${storeList.s_sn }</a></td>
+		<td><a href="StoreInfo?s_no=${storeList.s_no }" class="nav-link">${storeList.s_phone }</a></td>
+		<td><a href="StoreInfo?s_no=${storeList.s_no }" class="nav-link">${storeList.s_cont }</a></td>
 	</tr>
 	</c:forEach>
 	</table>
@@ -109,7 +120,9 @@
  </c:if>
 
 </div>
-	 <a type="button" class="btn btn-primary" onclick="deleteValue();">삭제</a>
+ <div class="back-home-button text-center">
+	 <a type="button" class="btn btn-danger"" onclick="deleteValue();">삭제</a>
+	 </div>
 <script>
 //전체 체크    
 var chkObj  =  document.getElementsByName("rowCheck");

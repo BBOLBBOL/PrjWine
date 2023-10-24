@@ -8,10 +8,84 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/x-icon" href="/imgpage/favicon.ico">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+<style>
+.logintitle {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.container1 {
+    margin: 0 auto; /* 상하여백 좌우여백 */
+    max-width: 600px; /* 최대 폭 지정 */
+}
+
+form {
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+form div {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+textarea {
+    resize: vertical; /* 세로 크기 조절 허용 */
+    min-height: 100px; /* 최소 높이 지정 */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table {
+    border: 1px solid #ccc;
+}
+
+
+input[type="submit"] {
+  display: block;
+  margin: 0 auto; 
+}
+#category {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+</style>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </head>
 <body>
 <%@include file="/WEB-INF/include/nav.jsp"%>
+<div class="breadcrumb-section breadcrumb-bg">
+         <div class="col-lg-8 offset-lg-2 text-center">
+            <div class="breadcrumb-text">
+               <br>
+               <h1>고객 센터(매장)</h1>
+               <br>
+               <p>Customer Service</p>
+            </div>
+         </div>
+      </div>
+<br>
+<br>
 	<div class="container1" id="board" style="width: 50%; height: 350px; float: center;">
 			<form action="/StoreCsInquiry?s_no=${s_no }" method="POST" enctype="multipart/form-data" >
 			<input type="hidden" name="scs_idx" value="${scs_idx }">

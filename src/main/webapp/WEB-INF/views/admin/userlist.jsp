@@ -40,6 +40,17 @@
       .first-row td {
       background-color: #f2f2f2;
       }
+      
+      .back-home-button {
+    text-align: center; /* 가로 중앙 정렬 */
+    display: flex;
+    justify-content: center; /* 가로 중앙 정렬 */
+    align-items: center; /* 수직 중앙 정렬 */
+    height: 100vh; /* 수직 중앙 정렬에 필요한 높이 설정 (옵션) */
+    margin-top: -440px;
+}	
+      
+      
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script
@@ -108,7 +119,9 @@
  </c:if>
 
 </div>
-	<a type="button" class="btn btn-primary" onclick="deleteValue();">삭제</a>
+  <div class="back-home-button text-center">
+	<a type="button" class="btn btn-danger" onclick="deleteValue();">삭제</a>
+	</div>
 <script>
 //전체 체크    
 var chkObj  =  document.getElementsByName("rowCheck");

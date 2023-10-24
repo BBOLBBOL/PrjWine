@@ -53,6 +53,40 @@
 {
 margin-top: 50px;
 }
+
+.product-filters {
+  margin-bottom: 80px;
+}
+
+.product-filters ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+
+.product-filters ul li {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 18px;
+  margin: 15px;
+  border: 2px solid #051922;
+  color: #323232;
+  cursor: pointer;
+  padding: 8px 20px;
+  border-radius: 25px;
+  transition: all 0.3s;
+}
+
+.product-filters ul li:hover {
+  background-color: #933149;
+  color: #fff; 
+}
+.single-product-item {
+  margin-bottom: 30px;
+}
+
+
 </style>
 <script
    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
@@ -124,7 +158,6 @@ function goToPage(pageNumber) {
 		<div class="container">
 
 			<div class="row">
-                <div class="col-md-12">
                     <div class="product-filters">
                         <ul>
                             <li onclick="window.location.href = '/All_Click';"       name="All_click">all</li>
@@ -134,7 +167,6 @@ function goToPage(pageNumber) {
                             <li onclick="window.location.href = '/Rose_Click';"      name="rose_click">로제와인</li>
                             <li onclick="window.location.href = '/Other_Click';"     name="other_click">기타와인</li>
                         </ul>
-                    </div>
                 </div>
             </div>
       <!-- input 검색 -->
