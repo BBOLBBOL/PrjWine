@@ -7,6 +7,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/x-icon" href="/imgpage/favicon.ico">
+<<<<<<< HEAD
 <style>
 .container1 {
     width: 50%;
@@ -71,6 +72,74 @@ button:hover {
     background-color: #0056b3;
 }
 </style>
+=======
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+<style>
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    justify-content: center; /* 가로 중앙 정렬 */
+    align-items: center; /* 수직 중앙 정렬 */
+    text-align: center; /* 가로 중앙 정렬 */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 5px 0;
+    text-align: center; /* 가로 중앙 정렬 */
+}
+
+textarea {
+    height: 150px;
+}
+
+img#imagePreview {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 10px 0;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+>>>>>>> refs/remotes/origin/G
 </head>
 <body>
 <%@include file="/WEB-INF/include/nav.jsp"%>
@@ -78,6 +147,7 @@ button:hover {
          <div class="col-lg-8 offset-lg-2 text-center">
             <div class="breadcrumb-text">
                <br>
+<<<<<<< HEAD
                <h1>고객 센터(고객)</h1>
                <br>
                <p>Customer Service</p>
@@ -87,6 +157,17 @@ button:hover {
 <br>
 <br>
 	<div class="container1" id="board" >
+=======
+               <h1>고객 센터(매장)</h1>
+               <br>
+               <p>Customer Service</p>
+            </div>
+         </div>
+      </div>
+<br>
+<br>
+	<div class="container" id="board" >
+>>>>>>> refs/remotes/origin/G
 			 <table id="table">
 		         <c:forEach var="ucs" items="${admincsviewList}">
             	 <label>문의사항 제목</label>

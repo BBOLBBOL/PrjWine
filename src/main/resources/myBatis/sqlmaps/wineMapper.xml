@@ -28,7 +28,11 @@ FROM STORE S
 LEFT JOIN WINELIST WL ON S.S_NO = WL.S_NO
 LEFT JOIN WINE W      ON W.W_NO = WL.W_NO
 WHERE WL.W_NO  =  #{w_no}
+<<<<<<< HEAD
 ORDER BY WL.W_PRICE ASC
+=======
+ORDER BY WL.W_AMOUNT
+>>>>>>> refs/remotes/origin/G
 
 
 

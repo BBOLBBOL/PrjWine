@@ -7,6 +7,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/x-icon" href="/imgpage/favicon.ico">
+<<<<<<< HEAD
 <style>
 
   #table { 
@@ -61,6 +62,53 @@ th {
       text-align: center; /* 헤더 텍스트 중앙 정렬 */
    }  
        
+=======
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+
+  #table { 
+         width: 70%; 
+         margin: 0 auto; /* 수평 가운데 정렬 */
+         border-collapse: collapse; /* 테이블 셀 경계를 합칩니다. */
+      }
+
+      /* 테이블 헤더 스타일 */
+      #table th { 
+         background-color: #f2f2f2; /* 헤더 배경색 */
+         border: 1px solid #dddddd; /* 테두리 선 스타일 */
+         padding: 10px; /* 셀 안 여백 */
+         text-align: center; /* 가운데 정렬 */
+         font-weight: bold; /* 텍스트 굵게 표시 */
+      }
+
+      /* 테이블 내용 스타일 */
+      #table td { 
+         border: 2px solid #dddddd; /* 테두리 선 스타일 */
+         padding: 10px; /* 셀 안 여백 */
+         text-align: center; /* 가운데 정렬 */
+      }
+
+      /* 테이블 내용 중 텍스트가 왼쪽 정렬되어야 하는 셀 */
+      #table td:nth-child(2) { text-align: center; /* 왼쪽 정렬 */ }
+       select { padding: 5px; }
+      
+      /* 첫번째 열의 td들 색변경 */
+      .first-row td {
+      background-color: #f2f2f2;
+      } 
+      
+      .back-home-button {
+    text-align: center; /* 가로 중앙 정렬 */
+    display: flex;
+    justify-content: center; /* 가로 중앙 정렬 */
+    align-items: center; /* 수직 중앙 정렬 */
+    height: 100vh; /* 수직 중앙 정렬에 필요한 높이 설정 (옵션) */
+    margin-top: -440px;
+}	
+      
+>>>>>>> refs/remotes/origin/G
 </style>
 </head>
 <body>
@@ -69,16 +117,26 @@ th {
          <div class="col-lg-8 offset-lg-2 text-center">
             <div class="breadcrumb-text">
                <br>
+<<<<<<< HEAD
                <h1>공지사항 목록</h1>
                <br>
                <p>Board List</p>
+=======
+               <h1>고객 센터(매장)</h1>
+               <br>
+               <p>Customer Service</p>
+>>>>>>> refs/remotes/origin/G
             </div>
          </div>
       </div>
 <br>
 <br>
 
+<<<<<<< HEAD
 	<table id="table" class="table table-striped table-hover">
+=======
+	<table id="table">
+>>>>>>> refs/remotes/origin/G
 	<tr class="first-row">
 	    <th><input type="checkbox" id="allCheck"></th>
 		<th>공지사항No</th>
@@ -120,7 +178,13 @@ th {
    <a href="/AdminBoardList?nowPage=${pds.endPage+1 }&cenPerPage${pds.cntPerPage}">&gt;</a>
  </c:if>
 </div>
+<<<<<<< HEAD
 
+=======
+  <div class="back-home-button text-center">
+	 <a type="button" class="btn btn-danger" onclick="deleteValue();">삭제</a>
+	 </div>
+>>>>>>> refs/remotes/origin/G
 <script>
 //전체 체크    
 var chkObj  =  document.getElementsByName("rowCheck");

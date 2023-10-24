@@ -54,6 +54,7 @@
     </style>
 </head>
 <body>
+<<<<<<< HEAD
 <%@include file="/WEB-INF/include/nav.jsp" %>
 <div class="breadcrumb-section breadcrumb-bg">
             <div class="col-lg-8 offset-lg-2 text-center">
@@ -67,6 +68,20 @@
    </div>
    <br>
    <br>
+=======
+ <%@include file="/WEB-INF/include/nav.jsp" %>
+ <div class="breadcrumb-section breadcrumb-bg">
+         <div class="col-lg-8 offset-lg-2 text-center">
+            <div class="breadcrumb-text">
+               <br>
+            </div>
+         </div>
+      </div>
+<br>
+<br>
+ 
+
+>>>>>>> refs/remotes/origin/G
 
     <div class="container">
         <img src="/imgpage/WineStorypage.jpg" class="homeimg">

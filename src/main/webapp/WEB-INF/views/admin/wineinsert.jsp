@@ -7,6 +7,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/x-icon" href="/imgpage/favicon.ico">
+<<<<<<< HEAD
 	<style>
  .container {
             background-color: #fff;
@@ -68,6 +69,72 @@ th {
    }  
         
     </style>
+=======
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+	crossorigin="anonymous">
+
+	<style>
+ .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 1px solid #ddd;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+
+        input[type="text"],
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+
+        #preview {
+            max-width: 300px;
+            display: block;
+            margin: 10px auto;
+        }
+
+        #btn1 {
+            display: block;
+            margin: 0 auto;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
+        
+         h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+    </style>
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+	crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+>>>>>>> refs/remotes/origin/G
 </head>
 <body>
 <%@include file="/WEB-INF/include/nav.jsp"%>
@@ -75,9 +142,15 @@ th {
          <div class="col-lg-8 offset-lg-2 text-center">
             <div class="breadcrumb-text">
                <br>
+<<<<<<< HEAD
                <h1>와인등록</h1>
                <br>
                <p>Wine Insert</p>
+=======
+               <h1>고객 센터(매장)</h1>
+               <br>
+               <p>Customer Service</p>
+>>>>>>> refs/remotes/origin/G
             </div>
          </div>
       </div>

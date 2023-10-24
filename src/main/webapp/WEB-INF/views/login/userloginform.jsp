@@ -11,7 +11,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
 
 
+<<<<<<< HEAD
 .login-store {
+=======
+.login-user {
+>>>>>>> refs/remotes/origin/G
   font-family: 'Noto Sans KR', sans-serif;
   display: flex;
   justify-content: center;
@@ -126,9 +130,17 @@
 <br>
 <br>
 
+<<<<<<< HEAD
 <div class="login-store">
+=======
+<div class="login-user">
+>>>>>>> refs/remotes/origin/G
 <section class="login-form">
+<<<<<<< HEAD
   <form action="/UserLogin" method="POST"  >
+=======
+  <form action="/UserLogin" method="POST" >
+>>>>>>> refs/remotes/origin/G
    <div class="int-area">
             <input type="text" name="u_id" placeholder="Input your ID" autocomplete="off" id="u_id">
             <label for="id">I D</label>

@@ -130,6 +130,40 @@ body {
 	font-size: 18px; /* 글씨 크기 조절 */
 	color: #000; /* 글씨 색상 추가 */
 }
+
+.product-filters {
+  margin-bottom: 80px;
+}
+
+.product-filters ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+
+.product-filters ul li {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 18px;
+  margin: 15px;
+  border: 2px solid #051922;
+  color: #323232;
+  cursor: pointer;
+  padding: 8px 20px;
+  border-radius: 25px;
+  transition: all 0.3s;
+}
+
+.product-filters ul li:hover {
+  background-color: #933149;
+  color: #fff; 
+}
+.single-product-item {
+  margin-bottom: 30px;
+}
+
+
 </style>
 <script>
     // all 버튼 클릭 이벤트 핸들러
@@ -173,6 +207,7 @@ function goToPage(pageNumber) {
 </script>
 </head>
 <body>
+<<<<<<< HEAD
 	<%@include file="/WEB-INF/include/nav.jsp"%>
 	<div class="breadcrumb-section breadcrumb-bg">
 		<div class="col-lg-8 offset-lg-2 text-center">
@@ -181,6 +216,84 @@ function goToPage(pageNumber) {
 				<h1>전체와인</h1>
 				<br>
 				<p>Wine Information</p>
+=======
+<%@include file="/WEB-INF/include/nav.jsp"%>
+	  <div class="breadcrumb-section breadcrumb-bg">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-8 offset-lg-2 text-center">
+               <div class="breadcrumb-text">
+               <br>
+                  <h1>전체와인</h1>
+                  <br>
+                  <p>Wine Information</p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <br>
+   <br>
+   <!-- 와인 검색start -->
+   <div class="container">
+      <!-- 버튼 검색 -->
+      <div class="product-section mb-150">
+		<div class="container">
+
+			<div class="row">
+                    <div class="product-filters">
+                        <ul>
+                            <li onclick="window.location.href = '/All_Click';"       name="All_click">all</li>
+                            <li onclick="window.location.href = '/Red_Click';"       name="red_click">레드와인</li>
+                            <li onclick="window.location.href = '/White_Click';"     name="white_click">화이트와인</li>
+                            <li onclick="window.location.href = '/Sparkling_Click';" name="sparkling_click">스파클링</li>
+                            <li onclick="window.location.href = '/Rose_Click';"      name="rose_click">로제와인</li>
+                            <li onclick="window.location.href = '/Other_Click';"     name="other_click">기타와인</li>
+                        </ul>
+                </div>
+            </div>
+      <!-- input 검색 -->
+         	<div class="container">
+	<div class="search-container">
+         <form action="/NameSearch" method="POST">
+            <input type="search"   name="name_Search" placeholder="와인이름">
+            <input type="submit"   value="전체와인검색">
+   
+   <!-- 와인 검색end -->
+   
+   <c:set var="wine" value="" />
+
+	<c:choose>
+    <c:when test="${not empty redClick}">
+        <c:set var="wine" value="${redClick}" />
+    </c:when>
+    <c:when test="${not empty whiteClick}">
+        <c:set var="wine" value="${whiteClick}" />
+    </c:when>
+    <c:when test="${not empty sparkClick}">
+        <c:set var="wine" value="${sparkClick}" />
+    </c:when>
+    <c:when test="${not empty roseClick}">
+        <c:set var="wine" value="${roseClick}" />
+    </c:when>
+    <c:when test="${not empty otherClick}">
+        <c:set var="wine" value="${otherClick}" />
+    </c:when>
+    <c:when test="${not empty nameSearch}">
+        <c:set var="wine" value="${nameSearch}" />
+    </c:when>
+    <c:otherwise>
+        <c:set var="wine" value="${allClick}" />
+    </c:otherwise>
+</c:choose>
+
+	<div class="container"
+      style="margin-top: 60px; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; justify-content: start;">
+      <c:forEach var="wine" items="${wine}">
+         <div class="card" style="width: 18rem;">
+             <div style="max-width: 300px; max-height: 300px; margin: 0 auto;">
+   				 <img src="${wine.w_image}" alt="와인이미지" style="width: 300px; height: 300px; object-fit: contain;">
+>>>>>>> refs/remotes/origin/G
 			</div>
 		</div>
 	</div>

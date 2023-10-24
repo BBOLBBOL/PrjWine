@@ -39,16 +39,29 @@ body {
 }
 
 .wine-details {
+<<<<<<< HEAD
    flex-basis: 40%; /* 오른쪽 위 */
    padding: 0px;
    margin-bottom: 100px;
+=======
+	flex-basis: 40%; /* 오른쪽 위 */
+	padding: 0px;
+	margin-bottom: 100px;
+>>>>>>> refs/remotes/origin/G
 }
 
 .wine-name {
+<<<<<<< HEAD
    font-size: 36px;
    font-weight: bold;
    margin-bottom: 50px;
    margin-top: 30px;
+=======
+	font-size: 36px;
+	font-weight: bold;
+	margin-bottom: 50px;
+	margin-top: 30px;
+>>>>>>> refs/remotes/origin/G
 }
 
 .wine-amount {
@@ -118,6 +131,7 @@ ul {
          </div>
    </c:forEach>
 
+<<<<<<< HEAD
       <ul>
          <c:forEach var="storeList" items="${storeList }" varStatus="loop">
          <c:if test="${loop.index < 3 }">
@@ -135,6 +149,25 @@ ul {
    </c:forEach>
       </ul>
    </div>
+=======
+		<ul>
+			<c:forEach var="storeList" items="${storeList }" varStatus="loop">
+			<c:if test="${loop.index < 3 }">
+			<!-- forEach  -->
+			<li class="store-list-item"><a class="store-link"
+				href="/StoreInfo?s_no=${storeList.s_no}">매장 이름 :
+					${storeList.s_name }</a> <span>가격 : ${storeList.w_price }</span><br>
+			    <c:choose>
+					<c:when test="${not empty loginVo.u_no}">
+						<a href="/AddCartForm?u_no=${loginVo.u_no}&s_no=${storeList.s_no}&w_no=${storeList.w_no}&wl_idx=${storeList.wl_idx}" class="btn btn-primary">장바구니</a><br>
+					</c:when>
+				</c:choose>
+		    		</li>
+				</c:if>
+	</c:forEach>
+		</ul>
+	</div>
+>>>>>>> refs/remotes/origin/G
 
 </body>
 </html>

@@ -11,7 +11,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
 
 
+<<<<<<< HEAD
 .login-user {
+=======
+.login-store {
+>>>>>>> refs/remotes/origin/G
   font-family: 'Noto Sans KR', sans-serif;
   display: flex;
   justify-content: center;
@@ -114,6 +118,7 @@
 </head>
 <body>
 <%@include file="/WEB-INF/include/nav.jsp"%>
+<<<<<<< HEAD
 	<div class="breadcrumb-section breadcrumb-bg">
 		<div class="col-lg-8 offset-lg-2 text-center">
 			<div class="breadcrumb-text">
@@ -127,6 +132,21 @@
 	<br>
 	<br>
 <div class="login-user">
+=======
+<div class="breadcrumb-section breadcrumb-bg">
+         <div class="col-lg-8 offset-lg-2 text-center">
+            <div class="breadcrumb-text">
+               <br>
+               <h1>매장 로그인</h1>
+               <br>
+               <p>Store Login</p>
+            </div>
+         </div>
+      </div>
+<br>
+<br>
+<div class="login-store">
+>>>>>>> refs/remotes/origin/G
 <section class="login-form">
 
   <form action="/StoreLogin" method="POST" >
@@ -147,6 +167,7 @@
        </div>     
 </section>
 </div>
+<<<<<<< HEAD
 <script>
 
 document.getElementById("loginButton").addEventListener("click", function(event) {
@@ -159,6 +180,8 @@ document.getElementById("loginButton").addEventListener("click", function(event)
     }
 });
 
+=======
+>>>>>>> refs/remotes/origin/G
 
 // URL에서 loginFail 매개변수 추출
 var urlParams = new URLSearchParams(window.location.search);

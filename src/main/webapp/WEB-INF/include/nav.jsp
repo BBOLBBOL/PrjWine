@@ -96,12 +96,6 @@
 	margin-right: 20px; /* 메뉴 간격 조절 */
 }
 
-.nav-link {
-	text-decoration: none;
-	font-weight: bold;
-	font-size: 18px; /* 글씨 크기 조절 */
-	color: #fff; /* 글씨 색상 추가 */
-}
 
 body {
 	margin-bottom: 5% !important;
@@ -218,7 +212,12 @@ body {
 		</c:when>
 		<c:when test="${loginVo ne null and sloginVo eq null}">
 			<!-- 고객 로그인 상태 -->
+<<<<<<< HEAD
 				<li class="nav-item user"><br><b> ${loginVo.u_name } 님
+=======
+			<ul>
+				<li class="nav-item"><br> <b> ${loginVo.u_name } 님
+>>>>>>> refs/remotes/origin/G
 						환영합니다 </b></li>
 				<li class="nav-item user"><img src="/imgpage/logon.png"
 					class="nav-link dropdown-toggle" href="#" role="button"
@@ -244,6 +243,10 @@ body {
 		<c:when
 			test="${loginVo eq null and sloginVo ne null and sloginVo.s_no ne 99}">
 			<!-- 가게 로그인 상태 -->
+<<<<<<< HEAD
+=======
+			<ul >
+>>>>>>> refs/remotes/origin/G
 				<li class="nav-item"><br> <b> ${sloginVo.s_name } 님
 						환영합니다 </b></li>
 				<li class="nav-item"><img src="/imgpage/logon.png"
@@ -267,6 +270,10 @@ body {
 		</c:when>
 		<c:when test="${loginVo.u_no eq null and sloginVo.s_no eq 99}">
 			<!-- 가게 로그인 상태 -->
+<<<<<<< HEAD
+=======
+			<ul >
+>>>>>>> refs/remotes/origin/G
 				<li class="nav-item"><br> <b> ${sloginVo.s_name } 님
 						환영합니다 </b></li>
 				<li class="nav-item"><img src="/imgpage/logon.png"
