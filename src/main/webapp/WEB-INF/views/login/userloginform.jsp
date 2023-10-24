@@ -128,26 +128,45 @@
 
 <div class="login-store">
 <section class="login-form">
-  <form action="/UserLogin" method="POST" >
+  <form action="/UserLogin" method="POST"  >
    <div class="int-area">
-            <input type="text" name="u_id" placeholder="Input your ID" autocomplete="off">
+            <input type="text" name="u_id" placeholder="Input your ID" autocomplete="off" id="u_id">
             <label for="id">I D</label>
       </div>
       <div class="int-area">   
-            <input type="password" name="u_pw" placeholder="Input your password" autocomplete="off">
+            <input type="password" name="u_pw" placeholder="Input your password" autocomplete="off" id="u_pw">
             <label for="pw">P W</label> 
        </div>
        <div class="btn-area">
-            <button type="submit">로그인</button>
+            <button type="submit" id="loginButton">로그인</button>
          </div>
         </form>
        <div class="caption">
             <a href="/UserJoinForm">회원가입</a>
        </div>     
 </section>
+    <script>
+    document.getElementById("loginButton").addEventListener("click", function(event) {
+        var u_id = document.getElementById("u_id").value;
+        var u_pw = document.getElementById("u_pw").value;
+
+        if (u_id.trim() === "" || u_pw.trim() === "") {
+            alert("아이디와 비밀번호를 정확히 입력해주세요.");
+            event.preventDefault(); // 폼 제출 중단
+        }
+    });
+    
+    // URL에서 loginFail 매개변수 추출
+    var urlParams = new URLSearchParams(window.location.search);
+    var loginFail = urlParams.get('loginFail');
+
+    // loginFail 값이 존재하는 경우에만 alert 표시
+    if (loginFail) {
+        alert(decodeURIComponent(loginFail)); // URL 디코딩 필요
+    }
+
+    </script>
 </div>      
-
-
 </body>
 </html>
  

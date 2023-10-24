@@ -7,6 +7,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -22,7 +23,7 @@ public class StoreLoginController {
 	
 	// 로그인 기능 구현
 	@RequestMapping("/StoreLogin")
-	public String storelogin( StoreVo vo, HttpServletRequest request ) {
+	public String storelogin( StoreVo vo, HttpServletRequest request, Model model ) {
 		
 		// 세션 생성 
 		HttpSession session = request.getSession();
@@ -39,6 +40,7 @@ public class StoreLoginController {
 			session.setAttribute("sloginVo", loginVo);
 			returnURL = "redirect:/";
 		} else {
+			model.addAttribute("loginFail", "아이디나 비밀번호가 잘못되었습니다. 다시 시도하세요.");
 			returnURL = "redirect:/StoreLoginForm";
 		}
 		

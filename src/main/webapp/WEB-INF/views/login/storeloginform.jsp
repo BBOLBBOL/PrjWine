@@ -131,11 +131,11 @@
 
   <form action="/StoreLogin" method="POST" >
    <div class="int-area">
-            <input type="text" name="s_id" placeholder="Input your ID" autocomplete="off">
+            <input type="text" name="s_id" placeholder="Input your ID" autocomplete="off" id="s_id">
             <label for="id">I D</label>
       </div>
       <div class="int-area">   
-            <input type="password" name="s_pw" placeholder="Input your password" autocomplete="off">
+            <input type="password" name="s_pw" placeholder="Input your password" autocomplete="off" id="s_pw">
             <label for="pw">P W</label> 
        </div>
        <div class="btn-area">
@@ -147,6 +147,30 @@
        </div>     
 </section>
 </div>
+<script>
 
+document.getElementById("loginButton").addEventListener("click", function(event) {
+    var s_id = document.getElementById("s_id").value;
+    var s_pw = document.getElementById("s_pw").value;
+
+    if (s_id.trim() === "" || s_pw.trim() === "") {
+        alert("아이디와 비밀번호를 정확히 입력해주세요.");
+        event.preventDefault(); // 폼 제출 중단
+    }
+});
+
+
+// URL에서 loginFail 매개변수 추출
+var urlParams = new URLSearchParams(window.location.search);
+var loginFail = urlParams.get('loginFail');
+
+// loginFail 값이 존재하는 경우에만 alert 표시
+if (loginFail) {
+    alert(decodeURIComponent(loginFail)); // URL 디코딩 필요
+}
+
+</script>
+
+</script>
 </body>
 </html>
