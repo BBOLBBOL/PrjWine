@@ -79,7 +79,7 @@ VALUES (
    	</insert>
    	
    	
- <insert id="InsertPay" >
+ <insert id="InsertPay" parameterType="Map" >
  
  INSERT INTO SALESHISTORY (PAYNUM, U_NO, S_NO, SH_DATE, P_ALLPRICE, W_NO, WL_IDX )
 VALUES (#{paynum}, #{u_no}, #{s_no}, SYSDATE, #{p_allprice}, #{w_no}, #{wl_idx})

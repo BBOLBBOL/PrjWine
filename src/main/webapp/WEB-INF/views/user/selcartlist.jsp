@@ -140,6 +140,7 @@ form#search-form input[type="text"] {
                             <c:choose>
                                 <c:when test="${not empty loginVo.u_no}">
                                     <form action="/AddCart" method="POST">
+                                        <input type="hidden" name="w_amount" value="${wine.w_amount }">
                                         <input type="hidden" name="u_no" value="${loginVo.u_no}">
                                         <input type="hidden" name="w_no" value="${wine.w_no}">
                                         <input type="hidden" name="s_no" value="${wine.s_no}">
@@ -163,10 +164,18 @@ form#search-form input[type="text"] {
             <button class="btn btn-secondary" onclick="history.back();">매장 홈으로</button>
         </div>
     </main>
-    <script>
-        function myFunction() {
-            alert("장바구니에 추가되었습니다");
-        }
-    </script>
+<script>
+function myFunction() {
+    var w_amount = parseInt(document.querySelector('input[name="w_amount"]').value);
+    var c_count = parseInt(document.getElementById('text1').value);
+
+    if (c_count > w_amount) {
+        alert("재고 수량을 초과했습니다.");
+        event.preventDefault(); // 폼 제출을 중단
+    } else {
+        alert('장바구니에 추가되었습니다!');
+    }
+}
+</script>
 </body>
 </html>

@@ -57,14 +57,11 @@ public List<HavingWineVo>  selCartList(HavingWineVo vo) {
 	return selCartList;
 }
 
+
 @Override
-public String insertPay(PaymentVo pay) {
-
-	String view  =  null;
-
-	cartDao.insertPay(pay);
-
-	return view;
+public String insertPay(Map<String, Object> for_map) {
+	cartDao.insertPay(for_map);
+	return null;
 }
 
 

@@ -24,7 +24,7 @@ public interface CartService {
 
    void AddCart(CartVo vo);
 
-   String insertPay(PaymentVo pay);
+   String insertPay(Map<String, Object> for_map);
    
    List<HavingWineVo> selCartList(HavingWineVo vo);
 

@@ -70,7 +70,7 @@
 	<main>
 
 		<form action="/UserPayment?u_no=${u_no }" method="POST"
-			id="formPayment">
+			id="formPayment" onsubmit="validateAndSubmit()">
 			<input type="hidden" name="cartids" value="" />
 
 			<!-- 게시물 목록 -->
@@ -85,8 +85,10 @@
 					<th>총가격</th>
 				</tr>
 				<c:forEach var="cart" items="${cartList}">
-					<input type="hidden" name="w_amount" value="${cart.w_amount}" />
-					<input type="hidden" name="c_count" value="${cart.c_count}" />
+					<input type="hidden" id="w_amount" name="w_amount" value="${cart.w_amount}" />
+					<input type="hidden" id="c_count" name="c_count" value="${cart.c_count}" />
+					<input type="hidden" id="c_idx" name="c_idx" value="${cart.c_idx }" />
+					
 					<tr>
 						<td><input type="checkbox" name="rowCheck" id="rowCheck"
 							value="${cart.c_idx }" />
@@ -183,6 +185,28 @@
 			   }
 			}  // deleteValue
 			}
+		function validateAndSubmit() {
+		    var isValid = true;
+		    var cCountInput = document.getElementById('c_count');
+		    var wAmountInput = document.getElementById('w_amount');
+		    var selectedCount = parseInt(cCountInput.value);
+		    var availableCount = parseInt(wAmountInput.value);
+
+		    if (isNaN(selectedCount) || selectedCount <= 0) {
+		        isValid = false;
+		        alert("수량은 1 이상의 숫자여야 합니다.");
+		    } else if (selectedCount > availableCount) {
+		        isValid = false;
+		        
+		    }
+
+		    if (!isValid) {
+		        return false;  // 유효하지 않은 경우 폼 제출을 중지
+		        event.preventDefault();
+		    }
+
+		    return true;  // 유효한 경우 폼을 제출
+		}
 	</script>
 </body>
 

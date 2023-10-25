@@ -70,13 +70,16 @@ public class StoreWineController {
       pds  =  new PdsPagingVo(total, Integer.parseInt(nowPage), Integer.parseInt(cntPerPage));
       
       
+      int w_amount  =  vo.getW_amount();  
       
       // 각 매장별 보유 와인 조회
       List<HavingWineVo> wineList = storeService.getWineList(vo);
+      
+      
       List<HavingWineVo> wineList2 = storeService.wineList2(pds,s_no);
       
       System.out.println(wineList2);
-      
+      System.out.println(w_amount);
       ModelAndView mv = new ModelAndView();
       mv.setViewName("store/storewinemanage");
       mv.addObject("wineList", wineList2);
@@ -84,6 +87,8 @@ public class StoreWineController {
       mv.addObject("wl_idx", wl_idx);
       mv.addObject("s_no", s_no);
       mv.addObject("pds", pds);
+      
+      
       
       return mv;
    }

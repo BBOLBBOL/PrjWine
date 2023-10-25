@@ -73,15 +73,15 @@ public List<HavingWineVo> selCartList(HavingWineVo vo) {
 }
 
 @Override
-public void insertPay(PaymentVo pay) {
+public void insertPay(Map<String, Object> for_map) {
 	
 	
 	
-	sqlSession.insert("Cart.InsertPay", pay);
+	sqlSession.insert("Cart.InsertPay", for_map);
 	
-	sqlSession.delete("Cart.DeleteCart", pay);
+	sqlSession.delete("Cart.DeleteCart", for_map);
 	
-	sqlSession.update("Cart.UpdatePayWineList", pay);
+	sqlSession.update("Cart.UpdatePayWineList", for_map);
 	
 }
 
