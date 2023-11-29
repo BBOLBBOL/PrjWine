@@ -41,7 +41,6 @@ public class TastingWineController {
 		
 		pds = new PdsPagingVo(total, Integer.parseInt(nowPage), Integer.parseInt(cntPerPage));
 		
-		List<TastingVo> tastList = tastingService.getTastList(vo);
 		List<TastingVo> tastList2 = tastingService.getTastList2(pds);
 		
 		ModelAndView mv = new ModelAndView();

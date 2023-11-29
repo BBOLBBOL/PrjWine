@@ -176,7 +176,7 @@
 						<div>
 							<input type="file" accept="image/*" onchange="readURL(this)"
 								name="upfile" class="upfile" /><br>
-								 <img id="preview" style="max-width: 300px;">
+								 <img id="preview" style="max-width: 100%;">
 						</div>
 					</td>
 				</tr>

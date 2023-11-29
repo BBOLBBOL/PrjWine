@@ -26,7 +26,6 @@ public class CsController {
 		 
 		int s_no  =  vo.getS_no();
 		int scs_idx = vo.getScs_idx();
-		List<CsVo> storecsList  =  csService.getstorecsList(vo);
 		ModelAndView  mv  = new ModelAndView();  
 		mv.setViewName("cs/storecsinquiry");
 		mv.addObject("scs_idx", scs_idx);
@@ -55,7 +54,6 @@ public class CsController {
 		
 		int ucs_idx  =  vo.getUcs_idx();
 		int u_no     =  vo.getU_no();
-		List<CsVo> usercsList  =  csService.getusercsList(vo); 
 		ModelAndView  mv  = new ModelAndView();  
 		mv.setViewName("cs/usercsinquiry");
 		mv.addObject("ucs_idx", ucs_idx);
@@ -97,7 +95,6 @@ public class CsController {
 	
 		 int u_no  =  vo.getU_no();
 		 
-		 List<CsVo> usercsList  =  csService.getusercsList(vo);  
 		 List<CsVo> userCsList2  =   csService.getUserCsList2(pds, u_no); 
 		 ModelAndView mv = new ModelAndView();
          mv.setViewName("cs/usercs");
@@ -126,7 +123,6 @@ public class CsController {
 		
 		pds  =  new PdsPagingVo(total, Integer.parseInt(nowPage), Integer.parseInt(cntPerPage));
 		
-		List<CsVo> csalluserList  =  csService.getcsalluserList(vo);  
 		List<CsVo> csAdminUserList  =  csService.csAdminUserList(pds);
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("cs/adminusercs");
@@ -212,7 +208,6 @@ public class CsController {
 		
 		pds  =  new PdsPagingVo(total, Integer.parseInt(nowPage), Integer.parseInt(cntPerPage));
 		
-		List<CsVo> csAllStoreList  =  csService.getcsAllStoreList(vo);
 		List<CsVo> csAdminStoreList = csService.csAdminStoreList(pds);
 	
 		
@@ -243,7 +238,6 @@ public class CsController {
 		
 		int s_no  =  vo.getS_no();
 		
-		List<CsVo> storecsList  =  csService.getstorecsList(vo);
 		List<CsVo> storeCsList2  =  csService.getStoreCsList2(pds, s_no);
 		ModelAndView mv  =  new ModelAndView();
 		mv.setViewName("cs/storecs");
@@ -261,7 +255,6 @@ public class CsController {
 	int UserCsResponse   =  csService.adminCsResponse(vo);
 	
 	// Store
-	int StoreCsResponse  =  csService.adminCsStoreResponse(vo);
 	
 	if(UserCsResponse == 1) {
 		mv.setViewName("redirect:/AdminCsView?ucs_idx=" + vo.getUcs_idx());

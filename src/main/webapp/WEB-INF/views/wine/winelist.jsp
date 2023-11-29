@@ -261,8 +261,8 @@ function goToPage(pageNumber) {
 								<p class="card-text">${wine.w_kind}</p>
 			</a>
 							</div>
-						</div>
 					</c:forEach>
+						</div>
 				</div>
 		</div>
 		<div class="pagination">
